@@ -1,6 +1,6 @@
 //https://rickandmortyapi.com/api/character?pages=${}
 
-const resultadoDeApi = async () => {
+export const resultadoDeApi = async () => {
 
     const respuesta = await fetch("https://rickandmortyapi.com/api/character")
     const infoApi = await respuesta.json()
@@ -46,5 +46,5 @@ const resultadoDeApi = async () => {
 
 
 const todaslaspaginas = await resultadoDeApi()
-// console.log(todaslaspaginas)
+ console.log(todaslaspaginas)
 
