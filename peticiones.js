@@ -1,6 +1,6 @@
 //https://rickandmortyapi.com/api/character?pages=${}
 
-const resultadoDeApi = async () => {
+export const resultadoDeApi = async () => {
 
     const respuesta = await fetch("https://rickandmortyapi.com/api/character")
     const infoApi = await respuesta.json()
@@ -10,7 +10,7 @@ const resultadoDeApi = async () => {
 
     const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
 
-    const blocks = 5    
+    const blocks = 3    
     
     //Personajes contendra todos lo que se obtenga de la API en la parte de results, y se retornara al final de la funcion
     const personajes = []
@@ -35,8 +35,8 @@ const resultadoDeApi = async () => {
             })
 
             if(i + blocks <= numPag) {
-                // console.log('Esperando 2 segundos antes del siguiente bloque')
-                await delay(2000)
+                // console.log('Esperando 1 segundos antes del siguiente bloque')
+                await delay(1000)
             }
         }
 
