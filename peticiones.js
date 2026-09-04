@@ -1,5 +1,12 @@
 //https://rickandmortyapi.com/api/character?pages=${}
 
+const fetchData = async (page) => {
+    const response = await fetch(`https://rickandmortyapi.com/api/character?page=${page}`)
+    const info = await response.json()
+    return info.results
+}
+
+
 export const resultadoDeApi = async () => {
 
     const respuesta = await fetch("https://rickandmortyapi.com/api/character")
@@ -23,15 +30,15 @@ export const resultadoDeApi = async () => {
 
             for (let j = 0; j < blocks && i + j <= numPag; j++) {
                  // console.log('Haciendo peticion a la pagina ${i + j}')
-                peticiones.push(fetch(`https://rickandmortyapi.com/api/character?page=${i + j}`)
-                .then(respuesta => respuesta.json()))
+                const  page = i + j
+                peticiones.push(fetchData(page))
             }
             
             const resultados = await Promise.all(peticiones)
 
             // Cada bloque lo agregamos al arreglo de personajes, y si no es el último bloque, esperamos 2 segundos antes de hacer el siguiente bloque de peticiones
             resultados.forEach(resultado => {
-                personajes.push(...resultado.results)
+                personajes.push(...resultado)
             })
 
             if(i + blocks <= numPag) {
@@ -46,5 +53,5 @@ export const resultadoDeApi = async () => {
 
 
 const todaslaspaginas = await resultadoDeApi()
-// console.log(todaslaspaginas)
+ console.log(todaslaspaginas)
 
