@@ -22,7 +22,3 @@ export const normalizarDatos = async () => {
 
   return personajesNormalizados;
 };
-
-// Prueba rápida para verificar por consola
-const datosNormalizados = await normalizarDatos();
-console.log(datosNormalizados);
