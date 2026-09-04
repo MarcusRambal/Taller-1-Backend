@@ -17,7 +17,7 @@ export const resultadoDeApi = async () => {
 
     const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
 
-    const blocks = 3    
+    const blocks = 2    
     
     //Personajes contendra todos lo que se obtenga de la API en la parte de results, y se retornara al final de la funcion
     const personajes = []
