@@ -24,5 +24,5 @@ export const normalizarDatos = async () => {
 };
 
 // Prueba rápida para verificar por consola
-const datosNormalizados = await normalizarDatos();
-console.log(datosNormalizados);
+//const datosNormalizados = await normalizarDatos();
+//console.log(datosNormalizados);
