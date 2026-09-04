@@ -52,6 +52,6 @@ export const resultadoDeApi = async () => {
 }
 
 
-const todaslaspaginas = await resultadoDeApi()
- console.log(todaslaspaginas)
+//const todaslaspaginas = await resultadoDeApi()
+//console.log(todaslaspaginas)
 
